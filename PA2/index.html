@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <title>PA2</title>
+    <style>
+        body {
+            background-color: #EEEEEE;
+        }
+    </style>
+
+    <script src="./Utils/lil-gui.js"></script>
+    <script src="./Utils/trackball-rotator.js"></script>
+    <script src="./Utils/m4.js"></script>
+    <script src="./shader.gpu"></script>
+    <script src="./StereoCamera.js"></script>
+    <script src="./main.js"></script>
+
+</head>
+
+<body onload="init()">
+
+    <h2>A Cube with "Trackball" Mouse Rotation</h2>
+
+    <p id="message">Drag your mouse on the cube to rotate it.<br>
+        (On a touch screen, you can use your finger.)</p>
+    <label for="a">a</label>
+    <input type="number" name="a" id="a" onchange="parametersChanged()" value="1">
+    <label for="b">b</label>
+    <input type="number" name="b" id="b" onchange="parametersChanged()" value="1">
+    <label for="c">c</label>
+    <input type="number" name="c" id="c" onchange="parametersChanged()" value="2">
+    <label for="m">m</label>
+    <input type="number" name="m" id="m" onchange="parametersChanged()" value="0.5">
+    <label for="infinity">Set maximum for v parameter</label>
+    <input type="range" name="infinity" id="infinity" min="1" max="5" step="0.1" value="1"
+        onchange="parametersChanged()">
+    <label for="numOfSteps">Set number of divisions by v parameter</label>
+    <input type="range" name="numOfSteps" id="numOfSteps" min="10" max="50" step="1" value="10"
+        onchange="parametersChanged()">
+    <br>
+    <label for="pColor">Specify color of the point</label>
+    <input type="color" name="pColor" id="pColor" value="#ff0000" onchange="draw()">
+    <br>
+    <label for="scale">Scaling by</label>
+    <input type="range" name="scale" id="scale" min="1" max="4" step="0.01" value="1" onchange="draw()">
+    <div id="canvas-holder">
+        <canvas width="600" height="600" id="webglcanvas" style="background-color:red"></canvas>
+    </div>
+
+
+</body>
+
+</html>
